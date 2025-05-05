@@ -1,161 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gustavo Squinca | Portfólio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>11 MESES</title>
   <style>
-    * {margin: 0; padding: 0;box-sizing: border-box;}
-
-    html {scroll-behavior: smooth;}
-
-    body {font-family: 'Poppins', sans-serif;background-color: #f9fafb;color: #1f2937;line-height: 1.6;}
-
-    nav {position: fixed; top: 0; left: 0; right: 0; background-color: #1e293b; padding: 15px 20px; z-index: 1000; display: flex;justify-content: center;gap: 30px;}
-
-    nav a {color: #ffffff; text-decoration: none;font-weight: 600;transition: color 0.3s; }
-
-    nav a:hover {color: #60a5fa;}
-
-    header {background: linear-gradient(135deg, #1e293b, #0f172a); color: white;text-align: center;padding: 120px 20px 60px;margin-top: 60px; position: relative;}
-
-    header img {width: 140px;
-      height: 140px; 
-      border-radius: 50%; 
-      object-fit: cover; 
-      border: 4px solid white;
-      margin-top: 20px;}
-
-    main { max-width: 1000px;margin: 40px auto;padding: 0 20px;}
-
-    section {margin-bottom: 60px;animation: fadeIn 1s ease-in-out both;}
-
-    @keyframes fadeIn {from {opacity: 0; transform: translateY(30px);}to {opacity: 1; transform: translateY(0);}}
-
-    h2 {
-      font-size: 28px;
-      color: #1e293b;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background-color: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      margin-bottom: 30px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 15px 10px 0 0;
-      padding: 10px 18px;
-      background-color: #3b82f6;
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, purple, deeppink);
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-
-    .links a:hover {
-      background-color: #2563eb;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      background-color: #e5e7eb;
-      color: #6b7280;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 10px;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;''
+      text-shadow: 0 0 10px white;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: hotpink;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: deeppink;
+    }
+
+    .firework {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      animation: explode 1.2s ease-out forwards;
+      box-shadow: 0 0 10px pink, 0 0 20px pink;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
       }
-      header {
-        padding: 100px 20px 40px;
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0.3);
+        opacity: 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <h1>Meu Presente</h1>
+  <p>
+    Meu amor, nesses nossos 11 meses eu gostaria de fazer algo especial e que realmente desse um trabalhinho para ser feito manualmente... 
+    <br>
+    Maaaaas o Gugu pensou melhor e decidiu fazer algo que basicamente nada pode apagar (além do governo, lógico 😂), algo que nem o tempo apagaria, não poderia rasgar ou errar:
+    <br>
+    UM SITEEEEEEE! 🎉💻
+  </p>
 
-  <header>
-    <h1>Gustavo Squinca</h1>
-    <p>Técnico em Automação • Estudante de Ciência da Computação</p>
-    <img src="minha-foto.jpeg" alt="Foto de Gustavo Squinca">
-  </header>
+  <button onclick="launchFireworks()">Próxima Parte</button>
 
-  <main>
+  <script>
+    function launchFireworks() {
+      for (let i = 0; i < 50; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('firework');
 
-    <section id="sobre">
-      <h2>Sobre Mim</h2>
-      <div class="card">
-        <p>🎓 Técnico em Automação Industrial formado pela ETEC Martin Luther King, onde tive a oportunidade de explorar diversas áreas da automação, tanto na teoria quanto na prática, especialmente durante o desenvolvimento do TCC. Essa experiência me proporcionou uma base técnica sólida e uma visão ampla de sistemas automatizados, programação, sensores e controladores.<br>
-        💻 Atualmente, estou cursando Ciência da Computação, área na qual pretendo seguir profissionalmente. Mesmo com essa mudança de foco, reconheço o quanto a formação técnica em automação contribuiu para minha trajetória — especialmente no raciocínio lógico, na resolução de problemas e na familiaridade com tecnologia e sistemas integrados.<br>
-        🚀 Sigo em busca de aprendizado constante, novas experiências e oportunidades que me permitam aplicar meus conhecimentos, crescer profissionalmente e contribuir com soluções inovadoras na área de tecnologia.</p>
+        const x = (Math.random() - 0.5) * 600 + 'px';
+        const y = (Math.random() - 0.5) * 600 + 'px';
 
-        <h3>Habilidades:</h3>
-        <ul>
-          <li>Pacote Office e GSuite</li>
-          <li>Excel Intermediário</li>
-          <li>Eletrônica básica e sensores</li>
-          <li>HTML5, CSS3 e Python</li>
-          <li>CLPs (Controladores Lógicos Programáveis)</li>
-          <li>Inglês em desenvolvimento</li>
-        </ul>
-      </div>
-    </section>
+        dot.style.setProperty('--x', x);
+        dot.style.setProperty('--y', y);
+        dot.style.left = '50%';
+        dot.style.top = '50%';
 
-    <section id="projetos">
-      <h2>Projetos</h2>
+        document.body.appendChild(dot);
 
-      <div class="card">
-        <h3>Projeto Integrador de Automação</h3>
-        <p>Sistema com CLPs e sensores para controle de processos automatizados, desenvolvido como TCC técnico.</p>
-        <p><strong>Tecnologias:</strong> CLP Siemens, Ladder, sensores indutivos</p>
-        <a href="https://github.com/gustavosquinca/projeto-automacao" target="_blank">🔗 Ver no GitHub</a>
-      </div>
+        setTimeout(() => {
+          dot.remove();
+        }, 1200);
+      }
 
-      <div class="card">
-        <h3>Portfólio Pessoal</h3>
-        <p> Site pessoal desenvolvido com HTML e CSS puro. Visual clean e responsivo.</p>
-        <p><strong>Tecnologias:</strong> HTML5, CSS3</p>
-        <a href="https://github.com/gustavosquinca/portfolio" target="_blank">🔗 Ver no GitHub</a>
-      </div>
-    </section>
-
-    <section id="contato">
-      <h2>Contato</h2>
-      <div class="card links">
-        <a href="mailto:seuemail@email.com"> ✉️ Email </a>
-        <a href="https://www.linkedin.com/in/gustavo-squinca-44795b344/" target="_blank"> 💼 LinkedIn </a>
-        <a href="https://github.com/gustavosquinca" target="_blank"> 🐙 GitHub </a>
-        <a href="https://www.instagram.com/gsquinca/" target="_blank"> 📷 Instagram </a>
-        <a href="curriculo-gustavo.pdf" download> 📄 Currículo </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Gustavo Squinca. Todos os direitos reservados.
-  </footer>
+      // Redirecionar após os fogos (opcional)
+      setTimeout(() => {
+        window.location.href = "Meuperfil.html"; // troque para sua próxima página
+      }, 1500);
+    }
+  </script>
 
 </body>
-</html>
+</html> 
